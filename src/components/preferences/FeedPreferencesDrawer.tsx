@@ -1,44 +1,35 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import { X, Search, Check, Plus } from 'lucide-react';
+import { useQueryClient } from '@tanstack/react-query';
 import { useAppDispatch, useAppSelector } from '@/store';
 import {
   togglePreferredSource,
   togglePreferredCategory,
   addPreferredAuthor,
   removePreferredAuthor,
+  setActiveTab,
   resetPreferences
 } from '@/store/slices/preferencesSlice';
+import { setPage } from '@/store/slices/filterSlice';
 import { PROVIDERS_CONFIG, CATEGORIES_CONFIG } from '@/config/providers.config';
-import type { ProviderId, ArticleCategory } from '@/domain/article';
+import { extractUniqueAuthors } from '@/utils/authors';
+import type { ProviderId, ArticleCategory, Article, FetchArticlesResult } from '@/domain/article';
 import styles from './FeedPreferencesDrawer.module.css';
 
 interface FeedPreferencesDrawerProps {
   isOpen: boolean;
   onClose: () => void;
+  articles?: Article[];
 }
 
-const COMMON_AUTHORS = [
-  'BBC News',
-  'The Guardian',
-  'The New York Times',
-  'Al Jazeera Staff',
-  'Richard Sandomir',
-  'Yan Zhuang',
-  'Li You',
-  'Jakub Krupa',
-  'Martin Belam',
-  'Anatoly Zagorodny',
-  'Anthony Albanese',
-  'Dee Brock'
-];
-
-export function FeedPreferencesDrawer({ isOpen, onClose }: FeedPreferencesDrawerProps) {
+export function FeedPreferencesDrawer({ isOpen, onClose, articles = [] }: FeedPreferencesDrawerProps) {
   const [authorQuery, setAuthorQuery] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const authorDropdownRef = useRef<HTMLDivElement>(null);
 
   const dispatch = useAppDispatch();
   const preferences = useAppSelector(state => state.preferences);
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -52,13 +43,19 @@ export function FeedPreferencesDrawer({ isOpen, onClose }: FeedPreferencesDrawer
     };
   }, []);
 
+  const cachedQueries = queryClient.getQueriesData<FetchArticlesResult>({ queryKey: ['articleFeed'] });
+
+  const availableAuthors = useMemo(() => {
+    return extractUniqueAuthors(articles, cachedQueries, preferences.preferredAuthors);
+  }, [articles, cachedQueries, preferences.preferredAuthors]);
+
   if (!isOpen) return null;
 
-  const filteredSuggestions = COMMON_AUTHORS.filter(author =>
+  const filteredSuggestions = availableAuthors.filter(author =>
     author.toLowerCase().includes(authorQuery.toLowerCase().trim())
   );
 
-  const isExactMatch = COMMON_AUTHORS.some(
+  const isExactMatch = availableAuthors.some(
     a => a.toLowerCase() === authorQuery.toLowerCase().trim()
   );
 
@@ -211,7 +208,15 @@ export function FeedPreferencesDrawer({ isOpen, onClose }: FeedPreferencesDrawer
           >
             Reset Defaults
           </button>
-          <button type="button" className={styles.doneButton} onClick={onClose}>
+          <button
+            type="button"
+            className={styles.doneButton}
+            onClick={() => {
+              dispatch(setActiveTab('custom'));
+              dispatch(setPage(1));
+              onClose();
+            }}
+          >
             Done
           </button>
         </div>

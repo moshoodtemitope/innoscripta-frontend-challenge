@@ -77,6 +77,7 @@ export function App() {
       <FeedPreferencesDrawer
         isOpen={isPreferencesOpen}
         onClose={() => setIsPreferencesOpen(false)}
+        articles={articles}
       />
 
       <SavedArticlesModal

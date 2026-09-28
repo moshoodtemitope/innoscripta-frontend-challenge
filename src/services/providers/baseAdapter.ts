@@ -39,11 +39,11 @@ export abstract class BaseAdapter implements INewsAdapter {
 
   protected filterByAuthor(articles: Article[], preferredAuthors?: string[]): Article[] {
     if (!preferredAuthors || preferredAuthors.length === 0) return articles;
-    const searchAuthors = preferredAuthors.map(a => a.toLowerCase().trim()).filter(Boolean);
+    const searchAuthors = preferredAuthors.map(a => a.toLowerCase().replace(/^by\s+/i, '').trim()).filter(Boolean);
     if (searchAuthors.length === 0) return articles;
 
     return articles.filter(article => {
-      const authorLower = article.author.toLowerCase();
+      const authorLower = (article.author || '').toLowerCase().replace(/^by\s+/i, '');
       return searchAuthors.some(searchAuth => authorLower.includes(searchAuth));
     });
   }

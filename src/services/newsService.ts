@@ -36,11 +36,14 @@ export class NewsService {
       return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
     });
 
-    const totalPages = Math.max(1, Math.ceil(combinedTotalResults / params.pageSize));
+    const totalCount = (params.authors && params.authors.length > 0)
+      ? sorted.length
+      : combinedTotalResults;
+    const totalPages = Math.max(1, Math.ceil(totalCount / params.pageSize));
 
     return {
       articles: sorted,
-      totalResults: combinedTotalResults,
+      totalResults: totalCount,
       page: params.page,
       totalPages
     };
