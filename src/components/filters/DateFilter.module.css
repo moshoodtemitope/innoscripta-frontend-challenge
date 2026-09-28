@@ -1,0 +1,124 @@
+.dropdownWrapper {
+  position: relative;
+  display: inline-block;
+  width: auto;
+}
+
+.triggerButton {
+  height: 2.75rem;
+  width: 100%;
+  padding: 0 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.triggerButton:hover {
+  background-color: var(--color-bg-muted);
+  border-color: var(--color-border-hover);
+}
+
+.activeTrigger {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.activeBadge {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 50;
+  width: 19rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+  box-shadow: var(--shadow-dropdown);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+@media (max-width: 640px) {
+  .dropdownWrapper {
+    width: 100%;
+  }
+
+  .menu {
+    left: 0;
+    right: auto;
+    width: calc(100vw - 2rem);
+    max-width: 18rem;
+  }
+}
+
+.menuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.menuTitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.clearButton {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+.clearButton:hover {
+  background-color: var(--color-bg-muted);
+}
+
+.dateField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.fieldLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.dateInput {
+  height: 2.25rem;
+  padding: 0 0.625rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  font-size: 0.8125rem;
+  outline: none;
+}
+
+.dateInput:focus {
+  border-color: var(--color-primary);
+}

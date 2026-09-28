@@ -1,0 +1,127 @@
+.dropdownWrapper {
+  position: relative;
+  display: inline-block;
+  width: auto;
+}
+
+.triggerButton {
+  height: 2.75rem;
+  width: 100%;
+  padding: 0 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.triggerButton:hover {
+  background-color: var(--color-bg-muted);
+  border-color: var(--color-border-hover);
+}
+
+.badge {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  z-index: 50;
+  width: 17rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+  box-shadow: var(--shadow-dropdown);
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .dropdownWrapper {
+    width: 100%;
+  }
+
+  .menu {
+    width: calc(100vw - 2rem);
+    max-width: 18rem;
+    left: 0;
+  }
+}
+
+.quickActions {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.actionButton {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.actionButton:hover {
+  background-color: var(--color-bg-muted);
+}
+
+.sourceList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sourceItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.625rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.sourceItem:hover {
+  background-color: var(--color-bg-muted);
+}
+
+.sourceLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+}
+
+.colorDot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: var(--radius-full);
+}
+
+.checkbox {
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
