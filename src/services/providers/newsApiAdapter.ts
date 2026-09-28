@@ -5,7 +5,7 @@ import type {
   FetchArticlesParams, 
   FetchArticlesResult, 
   ProviderId 
-} from '../../domain/article';
+} from '@/domain/article';
 
 interface NewsApiArticleItem {
   source?: { id?: string; name?: string };

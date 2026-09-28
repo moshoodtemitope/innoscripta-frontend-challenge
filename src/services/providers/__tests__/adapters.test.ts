@@ -1,9 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { BbcAdapter } from '../bbcAdapter';
-import { GuardianAdapter } from '../guardianAdapter';
-import { NytAdapter } from '../nytAdapter';
-import { NewsApiAdapter } from '../newsApiAdapter';
-import { NewsService } from '../../newsService';
+import { BbcAdapter } from '@/services/providers/bbcAdapter';
+import { GuardianAdapter } from '@/services/providers/guardianAdapter';
+import { NytAdapter } from '@/services/providers/nytAdapter';
+import { NewsApiAdapter } from '@/services/providers/newsApiAdapter';
+import { NewsService } from '@/services/newsService';
 
 describe('News Adapters & Aggregator Engine', () => {
   beforeEach(() => {

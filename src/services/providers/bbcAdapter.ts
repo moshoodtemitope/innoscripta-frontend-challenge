@@ -5,7 +5,7 @@ import type {
   FetchArticlesParams,
   FetchArticlesResult,
   ProviderId
-} from '../../domain/article';
+} from '@/domain/article';
 
 interface BbcArticleItem {
   title: string;

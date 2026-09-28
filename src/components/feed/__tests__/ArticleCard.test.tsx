@@ -3,9 +3,9 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import { ArticleCard } from '../ArticleCard';
-import savedArticlesReducer from '../../../store/slices/savedArticlesSlice';
-import type { Article } from '../../../domain/article';
+import { ArticleCard } from '@/components/feed/ArticleCard';
+import savedArticlesReducer from '@/store/slices/savedArticlesSlice';
+import type { Article } from '@/domain/article';
 
 function renderWithStore(ui: React.ReactElement) {
   const store = configureStore({

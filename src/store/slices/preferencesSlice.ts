@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { ProviderId, ArticleCategory, UserPreferences } from '../../domain/article';
-import { loadFromLocalStorage, saveToLocalStorage } from '../../utils/storage';
+import type { ProviderId, ArticleCategory, UserPreferences } from '@/domain/article';
+import { loadFromLocalStorage, saveToLocalStorage } from '@/utils/storage';
 
 const PREFERENCES_STORAGE_KEY = 'news_user_preferences';
 

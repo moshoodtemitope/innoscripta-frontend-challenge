@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { ProviderId, ArticleCategory } from '../../domain/article';
+import type { ProviderId, ArticleCategory } from '@/domain/article';
 
 export interface FilterState {
   query: string;

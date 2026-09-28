@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Calendar, ChevronDown } from 'lucide-react';
-import { useAppDispatch, useAppSelector } from '../../store';
-import { setDateRange } from '../../store/slices/filterSlice';
+import { useAppDispatch, useAppSelector } from '@/store';
+import { setDateRange } from '@/store/slices/filterSlice';
 import styles from './DateFilter.module.css';
 
 export function DateFilter() {

@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import { SourceFilterDropdown } from '../SourceFilterDropdown';
-import filterReducer from '../../../store/slices/filterSlice';
+import { SourceFilterDropdown } from '@/components/filters/SourceFilterDropdown';
+import filterReducer from '@/store/slices/filterSlice';
 
 function renderWithStore(ui: React.ReactElement) {
   const store = configureStore({

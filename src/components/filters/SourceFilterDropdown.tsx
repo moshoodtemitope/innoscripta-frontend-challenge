@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { useAppDispatch, useAppSelector } from '../../store';
-import { toggleSelectedSource, setSelectedSources } from '../../store/slices/filterSlice';
-import { PROVIDERS_CONFIG } from '../../config/providers.config';
-import type { ProviderId } from '../../domain/article';
+import { useAppDispatch, useAppSelector } from '@/store';
+import { toggleSelectedSource, setSelectedSources } from '@/store/slices/filterSlice';
+import { PROVIDERS_CONFIG } from '@/config/providers.config';
+import type { ProviderId } from '@/domain/article';
 import styles from './SourceFilterDropdown.module.css';
 
 export function SourceFilterDropdown() {

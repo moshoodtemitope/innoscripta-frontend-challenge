@@ -1,6 +1,6 @@
 import { ArticleCard } from './ArticleCard';
 import { SkeletonCard } from './SkeletonCard';
-import type { Article } from '../../domain/article';
+import type { Article } from '@/domain/article';
 import styles from './ArticleGrid.module.css';
 
 interface ArticleGridProps {

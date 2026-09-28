@@ -1,6 +1,6 @@
 import { Search, X } from 'lucide-react';
-import { useAppDispatch, useAppSelector } from '../../store';
-import { setQuery } from '../../store/slices/filterSlice';
+import { useAppDispatch, useAppSelector } from '@/store';
+import { setQuery } from '@/store/slices/filterSlice';
 import styles from './SearchBar.module.css';
 
 export function SearchBar() {

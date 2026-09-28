@@ -1,4 +1,4 @@
-import type { ProviderId } from '../../domain/article';
+import type { ProviderId } from '@/domain/article';
 import type { INewsAdapter } from './baseAdapter';
 import { BbcAdapter } from './bbcAdapter';
 import { GuardianAdapter } from './guardianAdapter';

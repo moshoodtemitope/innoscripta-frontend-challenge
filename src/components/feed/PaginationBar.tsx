@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useAppDispatch, useAppSelector } from '../../store';
-import { setPage } from '../../store/slices/filterSlice';
+import { useAppDispatch, useAppSelector } from '@/store';
+import { setPage } from '@/store/slices/filterSlice';
 import styles from './PaginationBar.module.css';
 
 interface PaginationBarProps {

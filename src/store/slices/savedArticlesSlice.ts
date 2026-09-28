@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { Article } from '../../domain/article';
-import { loadFromLocalStorage, saveToLocalStorage } from '../../utils/storage';
+import type { Article } from '@/domain/article';
+import { loadFromLocalStorage, saveToLocalStorage } from '@/utils/storage';
 
 const SAVED_ARTICLES_STORAGE_KEY = 'news_saved_articles';
 

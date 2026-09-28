@@ -1,7 +1,7 @@
-import { useAppDispatch, useAppSelector } from '../../store';
-import { toggleSelectedCategory, setSelectedCategories } from '../../store/slices/filterSlice';
-import { CATEGORIES_CONFIG } from '../../config/providers.config';
-import type { ArticleCategory } from '../../domain/article';
+import { useAppDispatch, useAppSelector } from '@/store';
+import { toggleSelectedCategory, setSelectedCategories } from '@/store/slices/filterSlice';
+import { CATEGORIES_CONFIG } from '@/config/providers.config';
+import type { ArticleCategory } from '@/domain/article';
 import styles from './CategorySelect.module.css';
 
 export function CategorySelect() {

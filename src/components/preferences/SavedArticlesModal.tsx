@@ -1,6 +1,6 @@
 import { X, Trash2, ExternalLink } from 'lucide-react';
-import { useAppDispatch, useAppSelector } from '../../store';
-import { removeSavedArticle } from '../../store/slices/savedArticlesSlice';
+import { useAppDispatch, useAppSelector } from '@/store';
+import { removeSavedArticle } from '@/store/slices/savedArticlesSlice';
 import styles from './SavedArticlesModal.module.css';
 
 interface SavedArticlesModalProps {

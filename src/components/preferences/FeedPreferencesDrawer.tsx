@@ -1,15 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
 import { X, Search, Check, Plus } from 'lucide-react';
-import { useAppDispatch, useAppSelector } from '../../store';
+import { useAppDispatch, useAppSelector } from '@/store';
 import {
   togglePreferredSource,
   togglePreferredCategory,
   addPreferredAuthor,
   removePreferredAuthor,
   resetPreferences
-} from '../../store/slices/preferencesSlice';
-import { PROVIDERS_CONFIG, CATEGORIES_CONFIG } from '../../config/providers.config';
-import type { ProviderId, ArticleCategory } from '../../domain/article';
+} from '@/store/slices/preferencesSlice';
+import { PROVIDERS_CONFIG, CATEGORIES_CONFIG } from '@/config/providers.config';
+import type { ProviderId, ArticleCategory } from '@/domain/article';
 import styles from './FeedPreferencesDrawer.module.css';
 
 interface FeedPreferencesDrawerProps {

@@ -1,0 +1,15 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_GUARDIAN_API_KEY: ${VITE_GUARDIAN_API_KEY:-}
+        VITE_NYT_API_KEY: ${VITE_NYT_API_KEY:-}
+        VITE_NEWSAPI_KEY: ${VITE_NEWSAPI_KEY:-}
+    container_name: newstrack-app
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production

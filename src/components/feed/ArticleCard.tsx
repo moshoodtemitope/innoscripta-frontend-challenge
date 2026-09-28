@@ -1,8 +1,8 @@
 import { Bookmark, ExternalLink } from 'lucide-react';
-import { useAppDispatch, useAppSelector } from '../../store';
-import { toggleSaveArticle } from '../../store/slices/savedArticlesSlice';
-import { PROVIDERS_CONFIG } from '../../config/providers.config';
-import type { Article } from '../../domain/article';
+import { useAppDispatch, useAppSelector } from '@/store';
+import { toggleSaveArticle } from '@/store/slices/savedArticlesSlice';
+import { PROVIDERS_CONFIG } from '@/config/providers.config';
+import type { Article } from '@/domain/article';
 import styles from './ArticleCard.module.css';
 
 interface ArticleCardProps {

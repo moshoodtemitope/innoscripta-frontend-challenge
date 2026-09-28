@@ -1,6 +1,6 @@
 import { Moon, Sun, Sliders, Bookmark } from 'lucide-react';
-import { useTheme } from '../../hooks/useTheme';
-import { useAppSelector } from '../../store';
+import { useTheme } from '@/hooks/useTheme';
+import { useAppSelector } from '@/store';
 import styles from './Header.module.css';
 
 interface HeaderProps {
@@ -17,21 +17,21 @@ export function Header({ onOpenPreferences, onOpenSavedModal }: HeaderProps) {
       <div className={styles.container}>
         <div className={styles.brandGroup}>
           <div className={styles.brandIcon}>N</div>
-          <span className={styles.brandName}>NewsPulse</span>
+          <span className={styles.brandName}>NewsTrack</span>
         </div>
 
         <div className={styles.actions}>
-          <button 
-            type="button" 
-            className={styles.iconButton} 
+          <button
+            type="button"
+            className={styles.iconButton}
             onClick={toggleTheme}
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
 
-          <button 
-            type="button" 
+          <button
+            type="button"
             className={`${styles.iconButton} ${styles.bookmarkBadge}`}
             onClick={onOpenSavedModal}
             aria-label="View saved articles"
@@ -40,8 +40,8 @@ export function Header({ onOpenPreferences, onOpenSavedModal }: HeaderProps) {
             {savedCount > 0 && <span className={styles.badgeCount}>{savedCount}</span>}
           </button>
 
-          <button 
-            type="button" 
+          <button
+            type="button"
             className={styles.customizeButton}
             onClick={onOpenPreferences}
           >

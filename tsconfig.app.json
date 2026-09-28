@@ -5,7 +5,9 @@
     "lib": ["ES2023", "DOM"],
     "module": "esnext",
     "types": ["vite/client", "@testing-library/jest-dom/vitest"],
-    "allowArbitraryExtensions": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "skipLibCheck": true,
 
     /* Bundler mode */

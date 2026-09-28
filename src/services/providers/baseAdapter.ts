@@ -4,7 +4,7 @@ import type {
   FetchArticlesParams,
   FetchArticlesResult,
   ProviderId
-} from '../../domain/article';
+} from '@/domain/article';
 
 export interface INewsAdapter {
   readonly id: ProviderId;

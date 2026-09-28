@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from '../../store';
-import { setActiveTab } from '../../store/slices/preferencesSlice';
+import { useAppDispatch, useAppSelector } from '@/store';
+import { setActiveTab } from '@/store/slices/preferencesSlice';
 import styles from './FeedTabs.module.css';
 
 export function FeedTabs() {
